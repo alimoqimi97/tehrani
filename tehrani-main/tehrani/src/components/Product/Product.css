@@ -2,7 +2,7 @@
 
 .products
 {
-  width: 81%%;
+  /* width: 81%; */
   height: 271px;
   font-family: Zar;
   color: black;
@@ -18,6 +18,11 @@
 .products:hover
 {
   background-color: lightgrey;
+}
+
+.vazir-font
+{
+  font-family: Vazir;
 }
 
 .products img.prdc-img

@@ -4,6 +4,7 @@ import  LoginPage   from "../LoginPage/LoginPage";
 import DashBoard from '../dashboard/dashboard';
 import PropTypes from 'prop-types';
 import styles from './switchpage.module.css';
+import { Route , Redirect } from 'react-router';
 
 const SwitchPage = () => {
 

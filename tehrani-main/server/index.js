@@ -296,7 +296,7 @@ app.post('/api/create-cloth',(req,res) => {
             if(!newCloth){
                 res.send("anything received.");
             }else{
-                connection.query(`INSERT INTO clothes VALUES ('${newCloth.Name}' , ${newCloth.Price},${newCloth.Id},'${newCloth.Sizes}','${newCloth.colors}','${newCloth.Description}', '${newCloth.Category}','${"none"}','${newCloth.imgFilename}');`,(err) => {
+                connection.query(`INSERT INTO clothes VALUES ('${newCloth.Name}' , ${newCloth.Price},${newCloth.Id},'${newCloth.Sizes}','${newCloth.colors}','${newCloth.Description}', '${newCloth.Category}','${"newest"}','${newCloth.imgFilename}');`,(err) => {
                     if(err){
                         console.error("can't add new cloth.",err);
                         res.status(404).send("can't add new cloth.");

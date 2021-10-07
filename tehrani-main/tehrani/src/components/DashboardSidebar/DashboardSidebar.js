@@ -129,12 +129,13 @@ class DashboardSidebar extends React.Component {
             <ProductAdder />
           </Route>
           <Route path="/dashboard/delete-product">
-
+              <h1>delete product</h1>
           </Route>
           <Route path="/dashboard/user-account-info">
 
           </Route>
           <Route path="/">
+            <ProductAdder />
             {/* <h3>Please select a topic.</h3> */}
           </Route>
       </Switch>

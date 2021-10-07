@@ -68,7 +68,7 @@ class Product extends React.Component
 
     return(
 
-      <div className="products">
+      <div className="products vazir-font">
           <img className="prdc-img" src={'http://localhost:4000/images/' + this.state.imgSrc} alt="productImage" />
             <h4>{this.state.prdcName}</h4>
             <p>{this.state.prdcPrice}</p>

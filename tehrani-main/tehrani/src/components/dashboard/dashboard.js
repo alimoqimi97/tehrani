@@ -9,7 +9,7 @@ import './dashboard.css';
 const DashBoard = () => (
   <div className="container vazir-font">
     <DashboardSidebar />
-    <ProductAdder />
+    {/* <ProductAdder /> */}
   </div>
 );
 

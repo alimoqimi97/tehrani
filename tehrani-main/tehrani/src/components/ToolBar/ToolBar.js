@@ -15,6 +15,7 @@ import AllArticles from "../AllArticles/AllArticles.js";
 import ProductPage from '../ProductPage/ProductPage.js';
 import "./ToolBar.css";
 import "bootstrap";
+import DashBoard from '../dashboard/dashboard.js';
 
 
 

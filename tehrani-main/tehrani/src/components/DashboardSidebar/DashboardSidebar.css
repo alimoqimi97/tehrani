@@ -4,9 +4,9 @@ button.open-btn-position{
     margin-left: 2%;
 }
 
-/* div[role=navigation]{
-    height: 728px;
-} */
+/* div[role=navigation]{ */
+    /* margin-top: 76px; */
+/* } */
 
 @media only screen and (min-width: 320px) and (max-width: 480px) {
     div[role=navigation]{
