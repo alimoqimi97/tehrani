@@ -1,0 +1,39 @@
+.ProductPage {
+    font-family: Iranian Sans;
+    background-color: #f9f9f9;
+}
+
+.ProductPage div.product-property{
+    display: block;
+    width: 50%;
+    font-family: IranianSans;
+    position: relative;
+}
+
+.ProductPage div.product-property p{
+    display: inline-block;
+    float: right;
+}
+
+.ProductPage div.product-property h4{
+    display: inline-block;
+
+}
+
+.ProductPage div.product-property h3{
+    display: inline-block;
+}
+
+.ProductPage div.product-image{
+    display: block;
+    width: 50%;
+    float: right;
+    position: relative;
+}
+
+.ProductPage .container-style{
+    border-style: solid;
+    border-width: 1.8px;
+    border-color: lightblue;
+    border-radius: 8px;
+}

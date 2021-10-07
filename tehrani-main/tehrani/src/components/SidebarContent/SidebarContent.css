@@ -1,0 +1,29 @@
+
+ul.unstyled-list{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+ul.unstyled-list li{
+    padding-left: 8%;
+    line-height: 38px;
+}
+
+ul.unstyled-list li.elements-border-style{
+    border-style: solid;
+    border-width: 1.8px;
+    border-color: lightgray;
+    border-radius: 4px;
+}
+
+ul.unstyled-list a{
+    text-decoration: none;
+    color: #315eff;
+    font-weight: 700;
+    font-size: 18px;
+    transition: ease 1s;
+}
+
+ul.unstyled-list a:hover{
+    color: red;
+}

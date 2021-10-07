@@ -1,0 +1,8 @@
+.ProductPage {
+    font-family: IranianSans;
+}
+
+.ProductPage div.product-property{
+    display: inline-block;
+    width: 20%;
+}
