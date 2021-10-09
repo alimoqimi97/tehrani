@@ -22,7 +22,8 @@ const SwitchPage = () => {
 
     return (
       <div className={styles.switchpage}>
-        {currentPage}
+        {/* {currentPage} */}
+        {loggedIn ?  <Redirect to="/dashboard" /> : <LoginPage signedIn={loggedIn} setLoggedInFunc={setLoggedIn} /> }
       </div>
     );
   };

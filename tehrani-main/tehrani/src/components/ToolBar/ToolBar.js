@@ -86,6 +86,9 @@ class ToolBar extends React.Component {
                 <Route path="/product-page">
                    <ProductPage /> 
                 </Route>
+                <Route path="/dashboard">
+                  <DashBoard />
+                </Route>
                 <Route path="/" >
                     <Home />
                 </Route >

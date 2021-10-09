@@ -3,7 +3,7 @@ import Sidebar from "react-sidebar";
 import PropTypes from 'prop-types';
 import styles from './DashboardSidebar.module.css';
 import SidebarContent from '../SidebarContent/SidebarContent';
-import { BrowserRouter as Router , Route , Switch , matchPath } from 'react-router-dom';
+import { BrowserRouter as Router , Route , Switch , matchPath , withRouter } from 'react-router-dom';
 import 'bootstrap';
 import './DashboardSidebar.css';
 import ProductAdder from '../ProductAdder/ProductAdder';
@@ -74,7 +74,9 @@ class DashboardSidebar extends React.Component {
       sidebarOpen: false
     };
 
-    // document.querySelector('[role=navigation]'). = window.innerHeight;
+    
+
+    console.log(this.props.match);
 
     this.openButtonIcon = '>';
     // this.match = matchPath("http://localhost:3000/dashboard/",{
@@ -100,10 +102,10 @@ class DashboardSidebar extends React.Component {
   }
 
   render() {
-    let windowHeight = window.innerHeight;
+    // let windowHeight = window.innerHeight;
 
-    console.log(this.match);
-    // let match = useRouteMatch();
+    // console.log(this.match);
+    let match = this.props.match;
 
     return (
       <Router>
@@ -125,17 +127,18 @@ class DashboardSidebar extends React.Component {
 
 
       <Switch>
-          <Route path="/dashboard/add-product">
+          <Route path={`${match.path}/add-product`}>
             <ProductAdder />
           </Route>
-          <Route path="/dashboard/delete-product">
+          <Route path={`${match.path}/delete-product`}>
               <h1>delete product</h1>
           </Route>
-          <Route path="/dashboard/user-account-info">
-
+          <Route path={`${match.path}/user-account-info`}>
+              <h1>user account info</h1>
           </Route>
           <Route path="/">
-            <ProductAdder />
+            <h2>hello</h2>
+            {/* <ProductAdder /> */}
             {/* <h3>Please select a topic.</h3> */}
           </Route>
       </Switch>
@@ -150,4 +153,4 @@ DashboardSidebar.propTypes = {};
 
 DashboardSidebar.defaultProps = {};
 
-export default DashboardSidebar;
+export default withRouter(DashboardSidebar);
