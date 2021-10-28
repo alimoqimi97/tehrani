@@ -7,9 +7,10 @@ import './ProductInfoTable.css';
 const ProductInfoTable = (props) => {
 
   const productData = props.prdInfo;
+  const colors = productData.Colors;
 
   return (
-    <div className="bg-white">
+    <div className="bg-white vazir-font">
       <table className="table table-striped table-hover iranianSans-font">
         <thead>
           <tr>
@@ -23,7 +24,8 @@ const ProductInfoTable = (props) => {
           <tr>
             <td>{productData.Name}</td>
             <td>{productData.Sizes}</td>
-            <td>{productData.Colors}</td>
+            <td> <div style={{backgroundColor: `${productData.Colors}`,height: "25px"}} ></div> </td>
+            {/* <td>{productData.Colors}</td> */}
             <td>{productData.Price}</td>
           </tr>
         </tbody>

@@ -6,6 +6,7 @@ import axios from 'axios';
 import "./Vitrin.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import 'bootstrap';
 // import { response } from "express";
 
 
@@ -100,7 +101,7 @@ class Vitrin extends React.Component{
     let articles = this.state.products;
     let title = '';
     let flg = this.props.flag;
-    let vitrinStyle = "vitrin-container vitrin-border " + this.props.bgColor;
+    let vitrinStyle = "vitrin-container vitrin-border" + this.props.bgColor;
 
     if(flg === 'newest'){
       title = 'جدیدترین ها';
@@ -111,6 +112,7 @@ class Vitrin extends React.Component{
     }
     console.log(articles);
 
+    // if(articles.length > 0){
     return(
       <div className={vitrinStyle}>
         <h2 className="vazir-font vitrin-header">{title}</h2>
@@ -138,7 +140,13 @@ class Vitrin extends React.Component{
         </div>
       </div>
     );
-  }
+  // }else{
+    // return (
+      // <>
+      // </>
+    // );
+  // }
+}
 }
 
 Vitrin.propTypes ={

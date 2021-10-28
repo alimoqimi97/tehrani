@@ -1,0 +1,22 @@
+
+form.form-container
+{
+    margin: 9%;
+    padding: 5%;
+}
+
+form.form-border
+{
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 7px;
+    border-color: #c1c1c1;
+}
+
+form.form-background{
+    background-color: #77deff;
+}
+.vazir-font
+{
+    font-family: Vazir;
+}

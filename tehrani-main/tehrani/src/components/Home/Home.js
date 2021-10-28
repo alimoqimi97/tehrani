@@ -13,6 +13,7 @@ import "rc-footer/assets/index.css";
 import blogImage from '../Advert/images/blog10.jpg';
 import Articles from "../Vitrin/ProductsDetails.js";
 import ToolBar from "../ToolBar/ToolBar";
+import 'bootstrap';
 
 function importAll(r){
   return r.keys().map(r);
@@ -63,17 +64,24 @@ class Home extends React.Component
     // });
 
     let columns = [ {
-      title: "title",
-      url: "https://www.varzesh3.com/",
+      title: "ارتباط با ما",
+      url: "#",
       description: "description",
       openExternal: true
     },
     {
-      title: "title 2",
-      url: "url 2",
+      title: "همه ی کالاها",
+      url: "#",
       description: "description 2",
       openExternal: true
+    },
+    {
+      title: "سفارش",
+      url: "#",
+      description: "order",
+      openExternal: true
     }
+
   ];
 
     return (

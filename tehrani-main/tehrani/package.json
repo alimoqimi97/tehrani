@@ -1,8 +1,10 @@
 {
+  "homepage": "http://alimoqimi97.github.io/tehrani",
   "name": "tehrani",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@reduxjs/toolkit": "^1.6.2",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
@@ -19,6 +21,8 @@
     "react-scripts": "3.4.1",
     "react-sidebar": "^3.0.2",
     "react-slick": "^0.25.2",
+    "react-toastify": "^8.0.3",
+    "react-window": "^1.8.6",
     "reactstrap": "^8.4.1",
     "redux": "^4.1.0",
     "redux-devtools-extension": "^2.13.9",
@@ -29,7 +33,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -48,6 +54,7 @@
   },
   "proxy": "http://localhost:4000/",
   "devDependencies": {
+    "gh-pages": "^3.2.3",
     "react-redux": "^7.2.4"
   }
 }

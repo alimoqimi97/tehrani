@@ -1,13 +1,15 @@
 import React from "react";
 import {  Link } from "react-router-dom";
 import { connect } from 'react-redux';
-import { setSelectedProductId } from "../../js/actions";
+import {setSelectedProductId} from '../../features/ProductIdSlice.js';
+// import { setSelectedProductId } from "../../js/actions";
 import { Button , ButtonGroup } from "reactstrap";
 import PropTypes from "prop-types";
 import "./Product.css";
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    // setChosenProductId: (productID) => {dispatch(setSelectedProductId(productID));}
     setChosenProductId: (productID) => {dispatch(setSelectedProductId(productID));}
   };
 }
@@ -43,13 +45,13 @@ class Product extends React.Component
       description: this.state.prdcDescription
     }
 
-    // this.props.setCurrent(article);
+    this.props.setCurrent(article);
   }
 
   linkClickHandle = () => {
         //  dispatch the selected product ID.
         console.log("prdcId = " + this.state.prdcId);
-        this.props.setChosenProductId(this.state.prdcId);    
+        this.props.setChosenProductId(this.state.prdcId);   
   }
   render(){
 
@@ -57,7 +59,7 @@ class Product extends React.Component
     let btnTxt ;
 
     if(this.props.status === "home"){
-        seeDetails = <Link to="/product-page" onClick={this.linkClickHandle} className="btn btn-info">مشاهده جزییات</Link>
+        seeDetails = <Link to={`/product-page/${this.state.prdcId}`} onClick={this.linkClickHandle} className="btn btn-info">مشاهده جزییات</Link>
     }
 
     if(this.props.status === "allarticles"){

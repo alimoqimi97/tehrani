@@ -3,6 +3,7 @@ import Vitrin from "../Vitrin/Vitrin.js";
 import ArtDetail from "../ArtDetail/ArtDetail.js";
 import Products from "../Vitrin/ProductsDetails.js";
 import "./AllArticles.css";
+import 'bootstrap';
 
 function importAll(r){
   return r.keys().map(r);
@@ -96,9 +97,11 @@ class AllArticles extends React.Component
     // let prdcs;
 
     return(
-      <div>
-        <Vitrin products={prdcs} allarticlesfnc={this.setCurrentProduct} mode="allarticles" />
-        <ArtDetail artInfo={this.state.currentArtc} />
+      <div className="text-center">
+        <h2>All Products Page</h2>
+        <p>Under construction...</p>
+        {/* <Vitrin products={prdcs} allarticlesfnc={this.setCurrentProduct} mode="allarticles" />
+        <ArtDetail artInfo={this.state.currentArtc} /> */}
       </div>
     );
   }

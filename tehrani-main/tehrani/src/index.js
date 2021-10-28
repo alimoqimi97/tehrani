@@ -9,8 +9,10 @@ import { Provider } from "react-redux";
 import rootReducer from "./js/reducers/index";
 import { composeWithDevTools } from 'redux-devtools-extension';
 
+import { store } from './app/store.js';
 
-const store = createStore(rootReducer,{selectedProductId: -1},composeWithDevTools());
+
+// const store = createStore(rootReducer,{selectedProductId: -1},composeWithDevTools());
 
 ReactDOM.render(
   <Provider store={store}>

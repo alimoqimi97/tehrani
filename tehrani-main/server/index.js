@@ -1,11 +1,3 @@
-//import Express from 'express';
-// const Express = require('express');
-// const mysql = require('mysql');
-// const dbInfo = require('./dbConfig.js');
-// let multer = require('multer');
-// let cors = require('cors');
-// const { user } = require('./dbConfig.js');
-
 import Express from 'express';
 import mysql from 'mysql';
 import dbInfo from './dbConfig.js';
@@ -19,7 +11,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 // import  {user }  from './dbConfig.js';
 
-
+const port = 4000;
 
 let app = Express();
 
@@ -66,6 +58,12 @@ connection.connect(err => {
 
 });
 
+// connection.query('CREATE DATABASE IF NOT EXISTS tehrani;',(err,result) => {
+//     if(err) throw err;
+//     console.log('tehrani database created successfuly');
+// });
+
+
 
 connection.query('CREATE TABLE IF NOT EXISTS Users ( `username` varchar(15), `password` varchar(15), `phone` varchar(12), `id` int(1));',(err,rows,fields) => {
     if(err){
@@ -92,6 +90,16 @@ connection.query('CREATE TABLE IF NOT EXISTS productsImgs ( `prdcId` INT , `file
                         }
 });
 
+connection.query(`INSERT INTO users (username, password, phone, id) VALUES ('hamid', 'tehrani', '090111111', 1);`,
+                    (err) => {
+                        if(err){
+                            console.error("can't create user.",err);
+                        }else{
+                            console.log("user created successfully.");
+                        }
+});
+
+
 
 
 
@@ -99,7 +107,6 @@ app.get('/',(req, res) => {
     ++visitorsNumber;
     res.send("Welcome");
 });
-
 
 
 app.get('/api/users',(req,res) => {
@@ -218,7 +225,7 @@ app.get('/api/clothes',(req,res) => {
     });
 });
 
-//  get cloth data.
+//  get cloth data with its id.
 app.get('/api/clothes/:id',(req,res) => {
     const cId = parseInt(req.params.id);
 
@@ -325,7 +332,46 @@ app.post('/api/create-cloth',(req,res) => {
     // }
 });
 
-const port = 4000;
+app.delete('/api/delete-product/:id',(req,res) => {
+
+    const productID = req.params.id;
+
+    connection.query(`DELETE FROM clothes WHERE id = ${productID} `,(err,results) => {
+        if(err){
+            console.error('can not delete cloth.',err);
+            res.status(500).send('can not delete cloth.');
+        }
+
+        res.send('cloth deleted successfully.');
+
+
+
+    });
+
+});
+
+app.put('/api/change-password',(req,res) => {
+
+    let newPassword = req.body.newPassword;
+    let username = req.body.username;
+
+    // console.log(newPassword);
+    // console.log(username);
+    // console.log(req.body);
+    // console.log(req.body.newPassword);
+
+    connection.query(`UPDATE users SET password = '${newPassword}' WHERE username = '${username}';`,(err,results) => {
+        if(err){
+            console.error('can not change password',err);
+            res.status(500).send('can not change password');
+        }
+
+        console.log('password changed successfully.');
+
+        res.send(newPassword);
+    });
+
+});
 
 app.listen(port,() => {
     console.log(`app is listening on port ${port}`);

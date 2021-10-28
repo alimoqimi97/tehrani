@@ -6,17 +6,19 @@ import { connect } from 'react-redux';
 import axios from "axios";
 import './ProductPage.css';
 import 'bootstrap';
+import ShopGuide from '../ShopGuide/ShopGuide';
 
 
 let mapStateToProps = (state) => {
   const { setSelectedProductID } = state;
 
   console.log(state);
-  console.log(state.setSelectedProductID);
+  // console.log(state.setSelectedProductID);
   // console.log(state.setSelectedProductID.selectedProductId);
 
   return {
-    chosenProduct: state.setSelectedProductID.selectedProductId
+    // chosenProduct: state.setSelectedProductID.selectedProductId
+    chosenProduct: state.select.selectedProductId
   };
 }
 
@@ -37,6 +39,11 @@ const ProductPage = (props) => {
       filename: null
     }
   );
+  let [modalOpen , setModalOpen ] = useState(false);
+
+  const toggleModal = () => {
+    setModalOpen(!modalOpen);
+  }
 
   useEffect(() => {
 
@@ -66,14 +73,13 @@ const ProductPage = (props) => {
     <div className="row container-style">
       <div className="col"> 
         <ProductInfoTable prdInfo={productInfo} />
-        <button className="btn btn-success btn-lg w-100 .iranianSans-font{
-    font-family: Iranian Sans;
-}" type="button">سفارش</button>
+        <button className="btn btn-success btn-lg w-100 " onClick={toggleModal} type="button">سفارش</button>
       </div>
       <div className="col">
         <img className="rounded" src={ serverName + 'images/' + productInfo.filename} alt='product-image' />
       </div>
     </div>
+    <ShopGuide show={modalOpen}  changeModalStatus={toggleModal}   />
   </div>
   );
 };
