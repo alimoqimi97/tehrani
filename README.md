@@ -1,8 +1,10 @@
 # tehrani
-![tehrani-website-overview](https://github.com/alimoqimi97/tehrani/blob/main/tehrani-main/70ba92342f98df3b170dd05810580177.gif)
 This project is an online Children's clothing store that has been implemented by order of one of my relatives. Butو it was not completed due to their lack of follow-up.
 I used reactjs and bootstrap(reactstrap library) for implementing it.
 You can see video of website demo from [here](https://www.aparat.com/v/bJSPx).
+
+![tehrani-website-overview](https://github.com/alimoqimi97/tehrani/blob/main/tehrani-main/70ba92342f98df3b170dd05810580177.gif)
+
 
 # Project features:
 in this website, products must show on main page and any of them has buttons attached to them for opening detail page of it(product info like size,color,price and etc) and buy.
