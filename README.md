@@ -67,12 +67,12 @@ I used reactjs and bootstrap(reactstrap library) for implementing it.
 ```
 
 - uploading a file to server:
-````js
+```js
 let imageFile_formData = new FormData();
 imageFile_formData.append('file',this.state.selectedFiles);
 this.imageUpload(imageFile_formData);
 ```
-````js
+```js
 imageUpload = (imgFd) => {
     axios.post('/api/clothes/upload',imgFd).then((response) => {
       console.log(response.data);
@@ -83,7 +83,7 @@ imageUpload = (imgFd) => {
 ```
 
 - working with redux:
-````js
+```js
 import { createSlice } from "@reduxjs/toolkit";
 
 export const pIdSlice = createSlice({
@@ -102,7 +102,7 @@ export const { setSelectedProductId } = pIdSlice.actions;
 
 export default pIdSlice.reducer;
 ```
-````js
+```js
 let mapStateToProps = (state) => {
   const { setSelectedProductID } = state;
 
@@ -112,7 +112,7 @@ let mapStateToProps = (state) => {
 }
 ```
 - working with react-router:
-````jsx
+```jsx
  <Switch>
           <Route path={`${match.path}/add-product`}>
             <ProductAdder />
@@ -131,7 +131,7 @@ let mapStateToProps = (state) => {
 ```
 
 - working with react hooks:
-````js
+```js
 const [productId , setProductId] = useState(props.chosenProduct);
 
 useEffect(() => {
